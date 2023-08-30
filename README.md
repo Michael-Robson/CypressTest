@@ -22,6 +22,16 @@ Global configuration, along with the before hooks is set in `cypress\support\e2e
 
 Reporter configraution and the base URL is set in `cypress.config.js`
 
+### Scripts We Can Run
+
+    yarn cypress:open - Opens the Cypress IDE
+    yarn lint - Runs eslint check on all Cypress files
+    yarn prettier:check - Reports on any formatting issues
+    yarn format - Fixes any formatting issues
+    yarn lint:fix - Fixes any linting issues
+    yarn beforePR - Runs both lint and format fix jobs
+    yarn allTestsChrome - Runs all the tests in headless chrome
+
 ### Dev Dependencies Used
 
 - [cypress](https://www.cypress.io/) - The test framework
