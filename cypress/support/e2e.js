@@ -18,3 +18,18 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+// Import the Cypress mochawesome reporter
+import 'cypress-mochawesome-reporter/register'
+
+// Anything in here runs before every spec file
+beforeEach(() => {
+  cy.clearAllCookies()
+  cy.clearAllLocalStorage()
+  cy.clearAllSessionStorage()
+
+  /* Adds a cookie with the spec file path, this can be useful if a automated test generates an alert
+   on a dashboard such as kibana, we will have a cookie pointing to the test that caused it
+  */
+  cy.setCookie('AutomatedTest:', Cypress.spec.relative)
+})

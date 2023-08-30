@@ -18,10 +18,12 @@
     "prettier:check": "prettier --check .",
     "format": "prettier --write .",
     "lint:fix": "yarn run lint --fix",
-    "beforePR": "yarn lint:fix && yarn format"
+    "beforePR": "yarn lint:fix && yarn format",
+    "allTestsChrome": "cypress run --browser chrome"
   },
   "devDependencies": {
     "cypress": "^12.17.4",
+    "cypress-mochawesome-reporter": "^3.5.1",
     "eslint": "^8.48.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-cypress": "^2.14.0",
