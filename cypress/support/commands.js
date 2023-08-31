@@ -23,3 +23,17 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+/**
+ * Custom command that takes an element gets the href attribute from it and asserts it equals the passed in value
+ */
+Cypress.Commands.add('assertURL', (element, expectedURL) => {
+  expect(element.attr('href')).to.equal(expectedURL)
+})
+
+/**
+ * Asserts the expected text is present on the page
+ */
+Cypress.Commands.add('assertTextOnPage', (expectedText) => {
+  cy.get('*').contains(expectedText)
+})
