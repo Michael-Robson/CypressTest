@@ -15,6 +15,6 @@ module.exports = defineConfig({
       // implement node event listeners here
       require('cypress-mochawesome-reporter/plugin')(on)
     },
-    baseUrl: 'https://example.cypress.io',
+    baseUrl: 'https://the-internet.herokuapp.com/',
   },
 })
