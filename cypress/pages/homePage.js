@@ -60,7 +60,11 @@ class HomePage {
    * Loops through each link and checks we have a link on the page with that text and href
    */
   assertLinksAreCorrect() {
-    // Read the homePageLinks.json file from the fixtures folder
+    /* Read the homePageLinks.json file from the fixtures folder
+    / The json file is an array of objects where each object contains two properties
+    / a text value represents the link text
+    / a href value represents the href url value 
+    */
     cy.fixture('homePageLinks').then((links) => {
       // Loop through each link in the json file
       for (var index in links) {
