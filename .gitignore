@@ -399,6 +399,7 @@ FodyWeavers.xsd
 
 # Cypress test reports
 cypress/reports/*
+cypress/downloads*
 
 # Cypress videos
 cypress/videos/*
