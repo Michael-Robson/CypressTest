@@ -27,7 +27,7 @@
 /**
  * Custom command that takes an element gets the href attribute from it and asserts it equals the passed in value
  */
-Cypress.Commands.add('assertURL', (element, expectedURL) => {
+Cypress.Commands.add('assertLinkURL', (element, expectedURL) => {
   expect(element.attr('href')).to.equal(expectedURL)
 })
 
@@ -36,4 +36,21 @@ Cypress.Commands.add('assertURL', (element, expectedURL) => {
  */
 Cypress.Commands.add('assertTextOnPage', (expectedText) => {
   cy.get('*').contains(expectedText)
+})
+
+/**
+ * Looks for a link with the passed in text value and clicks it
+ */
+Cypress.Commands.add('clickLinkByText', (linkText) => {
+  cy.get('a').contains(linkText).click()
+})
+
+/**
+ * Asserts the current page url matches the passed in value
+ */
+Cypress.Commands.add('assertPageURL', (expectedURL) => {
+  cy.url().then(($current) => {
+    cy.log('URL is ' + $current)
+    expect($current).to.include(expectedURL)
+  })
 })
